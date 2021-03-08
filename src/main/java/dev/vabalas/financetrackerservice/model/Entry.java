@@ -18,14 +18,14 @@ public class Entry {
     private String id;
 
     @Enumerated(EnumType.STRING)
-    private EntryType type;
+    private EntryType entryType;
 
     private LocalDateTime time;
     private String category;
     private BigDecimal amount;
 
-    public Entry(EntryType type, LocalDateTime time, String category, BigDecimal amount) {
-        this.type = type;
+    public Entry(EntryType entryType, LocalDateTime time, String category, BigDecimal amount) {
+        this.entryType = entryType;
         this.time = time;
         this.category = category;
         this.amount = amount;

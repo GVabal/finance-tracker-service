@@ -53,7 +53,7 @@ class EntryControllerTest {
 
         assertTrue(result.getStatusCode().is2xxSuccessful());
         assertThat(result.getBody().getId()).isEqualTo("1");
-        assertThat(result.getBody().getType()).isEqualTo(EntryType.INCOME);
+        assertThat(result.getBody().getEntryType()).isEqualTo(EntryType.INCOME);
         assertThat(result.getBody().getTime()).isEqualTo("2021-03-01T11:30:00");
         assertThat(result.getBody().getCategory()).isEqualTo("Work");
         assertThat(result.getBody().getAmount()).isEqualTo(BigDecimal.valueOf(1000));

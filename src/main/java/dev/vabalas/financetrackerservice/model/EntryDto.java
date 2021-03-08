@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
 public class EntryDto {
     @Pattern(regexp = "(INCOME)|(EXPENSE)", flags = {Pattern.Flag.CASE_INSENSITIVE},
             message = "Type can only be INCOME or EXPENSE.")
-    private final String type;
+    private final String entryType;
 
     @NotNull(message = "Date must be specified.")
-    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}", flags = {Pattern.Flag.CASE_INSENSITIVE},
-            message = "Date format must be yyyy-MM-ddThh:mm:ss")
+    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}", flags = {Pattern.Flag.CASE_INSENSITIVE},
+            message = "Date format must be yyyy-MM-ddThh:mm")
     private final String time;
 
     @NotBlank(message = "Category cannot be empty.")
@@ -26,7 +26,7 @@ public class EntryDto {
 
     public Entry toEntry() {
         return new Entry(
-                EntryType.valueOf(type.toUpperCase()),
+                EntryType.valueOf(entryType.toUpperCase()),
                 LocalDateTime.parse(time),
                 category,
                 amount

@@ -33,7 +33,7 @@ class EntryServiceTest {
     void getEntry_shouldReturnCorrectEntry() {
         Entry entry = entryService.getEntry("2");
         assertThat(entry.getId()).isEqualTo("2");
-        assertThat(entry.getType()).isEqualTo(EntryType.EXPENSE);
+        assertThat(entry.getEntryType()).isEqualTo(EntryType.EXPENSE);
         assertThat(entry.getTime()).isEqualTo("2021-03-02T13:30:00");
         assertThat(entry.getCategory()).isEqualTo("Food");
         assertThat(entry.getAmount()).isEqualTo(BigDecimal.valueOf(600));
