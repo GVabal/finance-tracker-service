@@ -17,6 +17,7 @@ public class Entry {
     @GenericGenerator(name = "simple", strategy = "uuid2")
     private String id;
 
+    @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private EntryType entryType;
 
